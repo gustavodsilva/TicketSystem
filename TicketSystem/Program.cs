@@ -1,7 +1,24 @@
 ﻿using TicketSystem.Services;
 using TicketSystem.Enums;
+using Microsoft.IdentityModel.Tokens;
+using TicketSystem.Banco;
+using System.Globalization;
 
-class Program
+try
+{
+    using var connection = new Connection().ObterConexao();
+    connection.Open();
+    Console.WriteLine(connection.State);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+    return;
+}
+
+return;
+
+partial class Program
 {
     static void Main(string[] args)
     {
