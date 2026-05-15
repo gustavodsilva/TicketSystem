@@ -13,7 +13,7 @@ class Program
 ░░█░░░█░░█░░░█▀▄░█▀▀░░█░░░░▀▀█░░█░░▀▀█░░█░░█▀▀░█░█
 ░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░░░░▀▀▀░░▀░░▀▀▀░░▀░░▀▀▀░▀░▀");
 
-        Console.WriteLine("\nBem-vindo ao sistema de gerenciamento de chamados!\n");
+        Console.WriteLine("\nBem-vindo ao sistema de gerenciamento de chamados!");
 
         while (executando)
         {
