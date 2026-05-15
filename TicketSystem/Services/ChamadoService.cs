@@ -54,4 +54,13 @@ internal class ChamadoService
             Console.WriteLine("Chamado não encontrado.");
         }
     }
+    
+    public void ExibirMenu()
+    {
+        Console.WriteLine("1 - Criar chamado");
+        Console.WriteLine("2 - Listar chamados");
+        Console.WriteLine("3 - Buscar chamados");
+        Console.WriteLine("4 - Atualizar status");
+        Console.WriteLine("0 - Sair do sistema");
+    }
 }
