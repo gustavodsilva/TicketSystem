@@ -6,9 +6,14 @@ using System.Globalization;
 
 try
 {
-    using var connection = new Connection().ObterConexao();
-    connection.Open();
-    Console.WriteLine(connection.State);
+    var connection = new Connection();
+    connection.GarantirTabelaChamadosV1();
+    var listaChamados = connection.Listar();
+
+    foreach (var chamado in listaChamados)
+    {
+        Console.WriteLine($"ID: {chamado.IdUnico} | Título: {chamado.Titulo} | Status: {chamado.Status}");
+    }
 }
 catch (Exception ex)
 {
