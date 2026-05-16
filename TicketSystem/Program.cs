@@ -3,12 +3,16 @@ using TicketSystem.Enums;
 using Microsoft.IdentityModel.Tokens;
 using TicketSystem.Banco;
 using System.Globalization;
+using TicketSystem.Models;
 
 try
 {
-    var connection = new Connection();
-    connection.GarantirTabelaChamadosV1();
-    var listaChamados = connection.Listar();
+    var ChamadosDAL = new ChamadosDAL();
+    ChamadosDAL.GarantirTabelaChamadosV1();
+    ChamadosDAL.Adicionar(new Chamado("Título do Chamado", "Descrição do Problema", DateTime.Now, Status.Aberto));  
+
+    var listaChamados = ChamadosDAL.Listar();
+
 
     foreach (var chamado in listaChamados)
     {

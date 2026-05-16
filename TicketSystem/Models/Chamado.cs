@@ -7,6 +7,16 @@ internal class Chamado
 
     public Chamado() { }
 
+    // Construtor para criar chamado sem fornecer IdUnico (será gerado pelo banco)
+    public Chamado(string titulo, string descricao, DateTime dataCriacao, Enums.Status status)
+    {
+        IdUnico = 0;
+        Titulo = titulo;
+        Descricao = descricao;
+        DataCriacao = dataCriacao;
+        Status = status;
+    }
+
     public int IdUnico { get; set; }
     public string Titulo { get; set; }
     public string Descricao { get; set; }
