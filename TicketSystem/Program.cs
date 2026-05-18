@@ -7,11 +7,8 @@ using TicketSystem.Models;
 
 try
 {
-    var ChamadosDAL = new ChamadosDAL();
-    ChamadosDAL.GarantirTabelaChamadosV1();
-    ChamadosDAL.Adicionar(new Chamado("Título do Chamado", "Descrição do Problema", DateTime.Now, Status.Aberto));  
-
-    var listaChamados = ChamadosDAL.Listar();
+    var dal = new ChamadosDAL();
+    var listaChamados = dal.Listar();
 
 
     foreach (var chamado in listaChamados)
