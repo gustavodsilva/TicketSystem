@@ -7,7 +7,22 @@ using TicketSystem.Models;
 
 try
 {
-    var dal = new ChamadosDAL();
+    var context = new TicketSystemContext();
+    var dal = new ChamadosDAL(context);
+
+    var novoChamado = new Chamado
+    {
+        Titulo = "Erro ao acessar o sistema",
+        Descricao = "Usuário com problemas para acessar chamado antigo",
+        DataCriacao = DateTime.Now,
+        Status = Status.Aberto
+    };
+    
+
+    //dal.Adicionar(novoChamado);
+    //dal.AtualizarStatus(1, Status.EmAndamento);
+    dal.Deletar(2002);
+
     var listaChamados = dal.Listar();
 
 
